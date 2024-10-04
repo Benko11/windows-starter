@@ -1,0 +1,156 @@
+@import url("reset.css");
+
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: normal;
+  src: url(./assets/fonts/Segoe\ UI.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: bold;
+  src: url(../assets/fonts/Segoe\ UI\ Bold.woff) format("woff");
+}
+
+:root {
+  --primary: hsl(117.27274, 89%, 56%);
+  --primary-2: hsl(131.39038, 97%, 38%);
+  --windows: #033dbe;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: clamp(3em, 3vw, 5em);
+}
+
+.colour {
+  animation: background-pan 15s linear infinite;
+  background-size: 200%;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to right,
+    var(--primary),
+    var(--primary-2),
+    var(--primary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.hero {
+  display: flex;
+  width: 1000px;
+  max-width: 95%;
+  gap: 2rem;
+}
+
+.hero div:first-child {
+  width: 100%;
+}
+
+.hero img {
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr:first-child {
+  border-bottom: 4px solid rgba(0, 0, 0, 0.9);
+}
+
+table tr:first-child th.starter {
+  border-bottom: 4px solid var(--primary-2);
+}
+
+table tr:first-child th.home,
+table tr:first-child th.pro {
+  border-bottom: 4px solid var(--windows);
+}
+
+table th {
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+table tr:not(:first-child) {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+table tr:not(:first-child) td {
+  padding: 0.75rem 2.5rem;
+}
+
+table tr:not(:first-child) td:first-child {
+  padding-left: 0;
+}
+
+table tr:not(:first-child) > td:not(:first-child) {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.features {
+  padding: 2rem 4rem;
+}
+
+.feature-tickmark {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  fill: var(--primary-2);
+  border: 2px solid var(--primary-2);
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.feature-tickmark.windows {
+  fill: var(--windows);
+  border: 2px solid var(--windows);
+}
+
+header .logo {
+  padding: 1rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    display: block;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+}
