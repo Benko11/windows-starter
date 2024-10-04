@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Segoe UI";
   font-weight: normal;
-  src: url(./assets/fonts/Segoe\ UI.woff) format("woff");
+  src: url(../assets/fonts/Segoe\ UI.woff) format("woff");
 }
 
 @font-face {
